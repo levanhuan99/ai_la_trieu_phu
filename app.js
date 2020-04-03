@@ -39,6 +39,7 @@ function guess(id,guess) {
         nextQuestion();
         showScore();
     }
+
 }
 
 function nextQuestion() {
@@ -48,9 +49,12 @@ function nextQuestion() {
 
 }
 function showScore() {
-    let element=document.getElementById("point");
-    let point=quiz.score;
-    element.innerHTML=point;
+    if(quiz.isEnded()){
+        let element=document.getElementById("point");
+        let point=quiz.score;
+        element.innerHTML=point;
+    }
+
 
 }
 
